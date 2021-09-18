@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&family=Play:wght@400;700&family=Ruslan+Display&display=swap');
+// vars
+$white: #fff;
+$red: #DD0808;
+
+.App {
+  text-align: center;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 40px;
+  margin: 0;
+  letter-spacing: 0.25em;
+  font-family: 'Play', sans-serif;
+}
+
+h2 {
+  font-size: 30px;
+  letter-spacing: 0.2em;
+  margin: 0;
+}
+
+// COLORS
+.color-white {
+  color: $white;
+}
+
+.flex-box {
+  display: flex;
+}
+
+.nav-menu-active-element {
+  color: $red!important;
+  transition: all ease .5s;
+}
+.nav-menu-active-element:hover {
+  color: $white!important;
+}
+
+.page {
+  position: relative;
+  height: 1000px;
+  background: #fff;
+  margin-top: 582px;
+}

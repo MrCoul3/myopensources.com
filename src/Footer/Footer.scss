@@ -1,0 +1,36 @@
+footer {
+  font-family: 'Jura', sans-serif;
+  overflow: hidden;
+
+  .footer-frame{
+    height: 345px;
+    width: 100%;
+    background-image: url(./images/footer.png);
+    //background-size: contain;
+    background-repeat: no-repeat;
+
+    .social-net-container {
+      display: flex;
+      flex-direction: column;
+      padding: 73px 259px 0 0;
+      ul {
+        display:flex;
+        align-self: flex-end;
+        gap: 5px;
+        margin-bottom: 138px;
+        li {
+          list-style: none;
+          overflow: hidden;
+        }
+      }
+      .language {
+        text-align: end;
+        a {
+          color: white;
+          font-size: 22px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

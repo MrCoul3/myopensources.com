@@ -1,0 +1,128 @@
+@import '../App';
+
+* {
+  transition: all ease .2s;
+}
+header {
+  font-family: 'Jura', sans-serif;
+  position: fixed;
+  //height: 466px;
+  width: 100%;
+  top: 0;
+  background: #E5E5E5;
+  .header-bg {
+    //background: url(/images/main-image.png);
+    background: url(./images/bg-dimmer.png) no-repeat center;
+    height: 466px;
+
+    .n-logo {
+      opacity: .4;
+      transition: all ease .3s;
+    }
+    .n-logo-onmouse-over {
+      transform: scale3d(1.1,1.1,1.1);
+      opacity: 1!important;
+    }
+    .n-logo-onmouse-out {
+      transform: scale3d(1, 1, 1);
+    }
+    .main-name {
+      font-weight: bold;
+      opacity: 0;
+      transition: all ease 1s;
+    }
+
+    .main-name-animation {
+        opacity: 1;
+    }
+    .main-name-onscroll-animated {
+      opacity: 0;
+      transition: opacity ease .2s;
+    }
+    .main-description {
+      width: 100%;
+      margin: 29px auto 77px;
+      max-width: 690px;
+      justify-content: space-around;
+      h2 {
+        opacity: 0;
+        transition: opacity ease-in-out .5s;
+      }
+    }
+    .main-description-animation {
+      opacity: 1!important;
+    }
+    nav {
+      position: relative;
+      top: 0;
+      //position: fixed;
+      //left: 0;
+      //right: 0;
+      .nav-container {
+        width: 100%;
+        max-width: 340px;
+        margin: 0 auto;
+        justify-content: space-around;
+        .link-wrap {
+          position: relative;
+          overflow: hidden;
+          height: 26px;
+          opacity: 0;
+          .bgColor1 {
+            position: relative;
+            width: 100%;
+            height: 26px;
+            bottom: 26px;
+            margin: 0;
+            margin-left: -100%;
+            background: rgba(8, 8, 8, 0.836);
+            transition: all ease .2s;
+          }
+          .bgColor2 {
+            width: 100%;
+            height: 26px;
+            position: relative;
+            background: rgb(230, 2, 2);
+            margin-left: -200%;
+            bottom: 52px;
+            transition: all ease .5s;
+            z-index: 1;
+          }
+        }
+      }
+      .link-wrap > a {
+        font-weight: bold;
+        font-size: 22px;
+        letter-spacing: 0.18em;
+        color: $white;
+        z-index: 2;
+        display: block;
+        position: relative;
+      }
+      .nav-link-animation {
+        opacity: 1!important;
+      }
+    }
+    .nav-animated {
+      top: -200px;
+    }
+
+  }
+
+  .main-photo {
+    position: relative;
+    top: -92px;
+    width: 210px;
+    transition: width ease-in-out 0.01s;
+  }
+}
+.header-animated {
+  z-index: 3;
+  max-height: 178px;
+  //max-height: 165px;
+  overflow: hidden;
+  top: -50px;
+  transition: top ease-in-out .3s;
+}
+
+
