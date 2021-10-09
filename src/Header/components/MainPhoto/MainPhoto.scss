@@ -1,0 +1,17 @@
+@import "../../../App";
+
+.main-photo {
+  //position: relative;
+  //top: -30px;
+  width: 210px;
+  margin: 22px 0 57px;
+  //transition: width ease-in-out 0.01s;
+  @include mediaWidth(900) {
+    width: 120px;
+    margin: 22px 0 35px;
+
+  }
+  @include mediaWidth(768) {
+    text-align: left!important;
+  }
+}

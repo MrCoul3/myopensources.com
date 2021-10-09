@@ -1,0 +1,32 @@
+.main-input {
+  margin: 10px auto;
+}
+.delete-btn {
+  cursor: pointer;
+}
+.note-element {
+  width: 47%;
+}
+
+.check {
+  width: 23px;
+  height: 20px;
+  border: 1px solid gray;
+  border-radius: 20px;
+  position: relative;
+  top: 3px;
+}
+.check strong {
+  position: absolute;
+  top: -2px;
+  right: 3px;
+}
+
+.note-completed {
+  text-decoration: line-through;
+}
+
+.service-buttons {
+  width: 20%;
+  margin: 10px auto!important;
+}

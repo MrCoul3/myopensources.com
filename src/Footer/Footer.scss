@@ -1,3 +1,5 @@
+@import "../App";
+
 footer {
   font-family: 'Jura', sans-serif;
   overflow: hidden;
@@ -5,30 +7,65 @@ footer {
   .footer-frame{
     height: 345px;
     width: 100%;
-    background-image: url(./images/footer.png);
+    background-image: url(./images/bg-dimmer.png);
     //background-size: contain;
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 0;
+    @include mediaWidth(900) {
+      //height: 220px;
+    }
+    @include mediaWidth(768) {
 
+    }
     .social-net-container {
       display: flex;
       flex-direction: column;
       padding: 73px 259px 0 0;
+      @include mediaWidth(900) {
+        padding: 80px 150px 0 0;
+      }
+      @include mediaWidth(900) {
+      }
+      @include mediaWidth(768) {
+        padding: 100px 0 0;
+      }
       ul {
         display:flex;
         align-self: flex-end;
         gap: 5px;
         margin-bottom: 138px;
+        @include mediaWidth(900) {
+          margin-bottom: 40px;
+          gap: 10px;
+        }
+        @include mediaWidth(768) {
+          align-self: center;
+          padding: 0;
+        }
         li {
           list-style: none;
           overflow: hidden;
         }
+        li > a > img {
+          @include mediaWidth(900) {
+            width: 25px;
+          }
+        }
       }
       .language {
         text-align: end;
+        @include mediaWidth(768) {
+          text-align: center;
+        }
         a {
           color: white;
           font-size: 22px;
           font-weight: bold;
+          @include mediaWidth(900) {
+            font-size: 18px;
+            letter-spacing: .3px;
+          }
         }
       }
     }

@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&family=Sacramento&display=swap');
+@import "../../../App";
+
+.main-description {
+  top: 180px;
+  width: 100%;
+  display: flex;
+  font-family: 'Jura', sans-serif;
+  letter-spacing: .18rem;
+  position: absolute;
+  justify-content: space-around;
+  @include mediaWidth(900) {
+    top: 122px;
+  }
+
+  @include mediaWidth(768) {
+    gap: 10px;
+    top: 94px;
+    right: 0;
+    width: auto;
+  }
+  @include mediaWidth(520) {
+    gap: 0;
+    flex-direction: column;
+}
+  &__element {
+    font-weight: 700;
+    //transition: all ease .5s;
+
+    @include mediaWidth(900) {
+      font-size: 20px;
+    }
+    @include mediaWidth(768) {
+      font-size: 16px;
+    }
+  }
+}
+
+.main-description-animation {
+  opacity: 1 !important;
+}

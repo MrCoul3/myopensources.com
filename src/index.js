@@ -1,18 +1,17 @@
-import React, {useState, useRef, useEffect} from 'react';
+import React, {useCallback, useMemo} from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
-import GameApp from "./portfolio/GameKeepARouble/GameApp";
-import Test from "./Test/Test";
-
+import {BrowserRouter as Router, Route, Switch, NavLink, useLocation, useHistory} from "react-router-dom";
 
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-    <Test/>
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+            <Router>
+                <App />
+            </Router>
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 
 

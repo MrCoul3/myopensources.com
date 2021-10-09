@@ -1,51 +1,87 @@
-@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&family=Play:wght@400;700&family=Ruslan+Display&display=swap');
-// vars
-$white: #fff;
-$red: #DD0808;
-
-.App {
-  text-align: center;
+main#App-main {
+  //height: 0;
+  //height: scrollHeight;
+  //margin-top: 0;
+  //margin-top: 100px;
+  overflow: hidden;
+  transition: all 1s ease;
 }
 
-* {
-  margin: 0;
-  box-sizing: border-box;
-  text-decoration: none;
+@mixin mediaWidth($media-width) {
+  @media screen and (max-width: #{$media-width}px) {
+    @content;
+  }
 }
+//@include mediaWidth(1024) {
+//  padding: 30px 0 103px;
+//}
 
-h1 {
-  font-size: 40px;
-  margin: 0;
-  letter-spacing: 0.25em;
-  font-family: 'Play', sans-serif;
-}
 
-h2 {
-  font-size: 30px;
-  letter-spacing: 0.2em;
-  margin: 0;
-}
-
-// COLORS
-.color-white {
-  color: $white;
-}
-
-.flex-box {
-  display: flex;
-}
-
-.nav-menu-active-element {
-  color: $red!important;
-  transition: all ease .5s;
-}
-.nav-menu-active-element:hover {
-  color: $white!important;
-}
-
-.page {
-  position: relative;
-  height: 1000px;
-  background: #fff;
-  margin-top: 582px;
-}
+//@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&family=Play:wght@400;700&family=Ruslan+Display&display=swap');
+//// vars
+//$white: #fff;
+//$red: #DD0808;
+//
+//.App {
+//  position: relative;
+//  top: 0;
+//  transition: top ease .4s;
+//}
+//
+//* {
+//  margin: 0;
+//  box-sizing: border-box;
+//  text-decoration: none;
+//}
+//
+//
+//h2 {
+//  font-size: 30px;
+//  letter-spacing: 0.2em;
+//  margin: 0;
+//}
+//
+//// COLORS
+//.color-white {
+//  color: $white;
+//}
+//
+//.flex-box {
+//  display: flex;
+//}
+//
+//.nav-menu-active-element {
+//  color: $red !important;
+//  transition: all ease .5s;
+//}
+//
+//.nav-menu-active-element:hover {
+//  color: $white !important;
+//}
+//
+//.page {
+//  position: relative;
+//  background: #fff;
+//  margin: 0 auto;
+//}
+//
+//main {
+//  height: 0px;
+//  overflow: hidden;
+//  transition: height ease-in-out .5s, padding-top ease-out .3s;
+//}
+//
+//.main-expanded {
+//  height: 700px;
+//}
+//
+//.main-padding-top {
+//  padding-top: 100px;
+//}
+//
+//.main-name {
+//  font-family: 'Play', sans-serif;
+//  font-size: 40px;
+//  margin: 0;
+//  letter-spacing: 0.25em;
+//}

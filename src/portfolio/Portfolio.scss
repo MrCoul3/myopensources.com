@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+$dark: #00071bc4;
+$gray: #6c757d;
+$light: #6294b8;
+$green: #198754;
+$yellow: #ffc107;
+$todoBg: #154e43;
+
+a {
+  text-decoration: none!important;
+}
+
+.flex-box {
+  display: flex;
+}
+
+.f-dir-col {
+  flex-direction: column;
+}
+
+.BackToHomeBtn {
+  left: 70px;
+  top: 47px;
+  position: absolute;
+  opacity: 0.1;
+  z-index: 111;
+  transition: all ease-in-out .3s;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+#Portfolio {
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif!important;
+
+  .main {
+    max-width: 1024px;
+    position: relative;
+    padding: 100px 30px 50px;
+    margin: 0 auto;
+    .components-menu {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 3vw 0;
+      a {
+        display: block;
+      }
+      .component-icon {
+        width: 300px;
+        border: 3px solid #b1b1b126;;
+        box-shadow: none;
+        transition:all ease-in-out .1s;
+        &:hover {
+          box-shadow: 0px 2px 8px 5px rgba(0, 0, 0, 0.25);
+          transform: scale3d(1.02,1.02, 1.02);
+        }
+      }
+    }
+  }
+  .header-bg-portfolio-component {
+    background: $dark;
+    &--light {
+      background: $light;
+    }
+    &--green {
+      background: $green;
+    }
+    &--gradient {
+      background: linear-gradient(106.01deg, rgba(0, 0, 0, 0.91) 9.82%, rgba(11, 57, 79, 0.9) 51.26%, rgba(9, 86, 122, 0.86) 71.74%, rgba(6, 113, 163, 0.82) 100%);
+    }
+    &--todoBg {
+      background: $todoBg;
+    }
+    .main-title {
+      font-size: 80px;
+      font-weight: 400;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+    }
+  }
+
+}
+

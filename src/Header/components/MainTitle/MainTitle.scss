@@ -1,0 +1,21 @@
+@import "../../../App";
+
+//@mixin mediaWidth($media-width) {
+//  @media screen and (max-width: #{$media-width}px) {
+//    @content;
+//  }
+//}
+
+
+.main-name {
+  font-size: 60px;
+  font-family: 'Sacramento', cursive;
+  margin: 0;
+  @include mediaWidth(900) {
+    font-size: 40px;
+  }
+  @include mediaWidth(768) {
+    font-size: 30px;
+    text-align: left;
+  }
+}
