@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
-@import "../App";
+@import "../index";
 
 * {
   transition: all ease .5s;
@@ -8,6 +8,7 @@
 
 .main-header {
   //height: 466px;
+  width: 100%;
   top: 0;
   color: white;
   position: relative;
@@ -17,25 +18,35 @@
   @include mediaWidth(768) {
     text-align: left;
   }
+
   &--collapse-animation {
     top: -367px;
-    position: fixed;
+    //position: fixed;
+    //position: sticky;
     width: 100%;
     z-index: 1000;
+
     @include mediaWidth(900) {
       top: -242px;
     }
     @include mediaWidth(768) {
+
     }
+
   }
+  &--fixed {
+    position: fixed;
+  }
+
 
   .header-bg {
     padding: 40px 20px 20px;
     transition: height ease .5s;
-    background: url(./images/bg-dimmer.jpg) ;
-    background-position: center 0;
-    background-repeat: no-repeat;
+    background: url(./images/bg-dimmer.jpg) no-repeat center 0;
     background-size: cover;
+    @include mediaWidth(900) {
+      //height: 50vh;
+    }
     .header-wrapper {
       position: relative;
       top: 0;

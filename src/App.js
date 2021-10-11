@@ -1,15 +1,25 @@
 import React, {useState, useEffect, useRef} from 'react';
-import {Route, useLocation, Redirect, Switch} from "react-router-dom";
+import {Route, useLocation, Redirect, Switch, useHistory} from "react-router-dom";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 import About from "./About/About";
 import Portfolio from "./portfolio/Portfolio";
 import PageNotFound from "./404/404";
 import './App.scss';
+import {
+    TransitionGroup,
+    CSSTransition
+} from "react-transition-group";
 
+const language = {
+    russian: {
 
+    },
+    english: {
 
-
+    }
+}
+const ContextLanguage = React.createContext(language);
 
 
 export default function App() {
@@ -19,65 +29,79 @@ export default function App() {
     const main = useRef(null);
     const mainCurrent = main.current;
     const [appMainStyles, setAppMainStyles] = useState({});
+    const [heightAuto, setHeightAuto] = useState();
+    const [headerFixed, setHeaderFixed] = useState();
 
-
-    useEffect(()=> {
+    useEffect(() => {
         if (location.pathname !== '/') {
             setHeaderAnimation({
                 header: 'main-header--collapse-animation',
-                navMenu: 'nav-menu-hidden'
+                navMenu: 'nav-menu-hidden',
             });
+
             if (mainCurrent) {
                 setAppMainStyles({
-                    height: mainCurrent.scrollHeight + 50,
-                    marginTop: '50px',
-                    marginBottom: '50px'
-                })
-                // console.log(mainCurrent.scrollHeight)
+                   heightNumbers: 'App-main-extended',
+                });
+                setTimeout(()=>setHeightAuto('App-main-height-auto'), 800)
+                setTimeout(()=>setHeaderFixed('main-header--fixed'), 300)
             }
         } else {
-            setHeaderAnimation('');
-            setAppMainStyles({
-                height: '0px',
-                marginTop: '0px',
-                marginBottom: '0px'
-            })
+            setHeightAuto('');
+            setHeaderFixed('')
+            setTimeout(()=>{
+                setHeaderAnimation({
+                    header: '',
+                    navMenu: '',
+                });
+                setAppMainStyles({
+                    heightNumbers: 'App-main-collapsed',
+                });
+            }, 100)
 
         }
-    }, [location])
-
+    }, [location, mainCurrent, heightAuto])
 
 
     return (
         <section className='App'>
 
-            <Header animation={headerAnimation}/>
+            <ContextLanguage.Provider>
+                <Header fixed={headerFixed} animation={headerAnimation}/>
 
-            <main
-                onTransitionEnd={ () => mainCurrent.style.height = 'auto' }
-                  ref={main} id={'App-main'}
-                  style={{
-                      height: appMainStyles.height,
-                      marginTop: appMainStyles.marginTop,
-                      marginBottom: appMainStyles.marginBottom
-                  }}>
-                <Switch>
-                    <Route exact path='/'/>
+                <main className={appMainStyles.heightNumbers + ' ' + heightAuto}
+                      ref={main}
+                      id={'App-main'}>
+                    <TransitionGroup >
+                        <CSSTransition
+                            key={location.key}
+                            appear={true}
+                            classNames="fade"
+                            timeout={500}
+                        >
+                            <Switch location={location}>
+                                <Route exact path='/'/>
 
-                    {['/about', '/portfolio'].map(path =>
-                        <Route  path={path} render={() =>
-                            <section className='main-page'>
-                                {path === '/about' ? <About/> : <Portfolio/>}
-                            </section>
-                        }>
-                        </Route>
-                    )}
-                    <Route component={PageNotFound} />
-                </Switch>
+                                {['/about', '/portfolio'].map(path =>
+                                    <Route path={path} render={() =>
+                                        <section className='main-page'>
+                                            {path === '/about' ? <About/> : <Portfolio/>}
+                                        </section>
+                                    }>
+                                    </Route>
+                                )}
+                                <Route component={PageNotFound}/>
+                            </Switch>
+                        </CSSTransition>
+                    </TransitionGroup>
 
-            </main>
 
-            <Footer/>
+                </main>
+
+                <Footer/>
+            </ContextLanguage.Provider>
+
+
 
         </section>
 

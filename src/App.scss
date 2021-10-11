@@ -1,17 +1,44 @@
+@import "./index";
 main#App-main {
-  //height: 0;
+  height: 0;
   //height: scrollHeight;
   //margin-top: 0;
   //margin-top: 100px;
   overflow: hidden;
-  transition: all 1s ease;
+  transition: margin .5s ease, height .7s ease;
 }
-
-@mixin mediaWidth($media-width) {
-  @media screen and (max-width: #{$media-width}px) {
-    @content;
+main#App-main.App-main-extended {
+  margin: 100px 0 50px;
+  height: 800px;
+  @include mediaWidth(900) {
+    margin: 70px 0;
+  }
+  @include mediaWidth(768) {
+    margin: 41px 0;
+  }
+  @include mediaWidth(634) {
+    height: 1000px;
   }
 }
+main#App-main.App-main-collapsed {
+  height: 0;
+}
+main#App-main.App-main-height-auto {
+  height: auto;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+.fade-exit {
+  opacity: 0;
+  height: 0;
+}
+//.fade-exit.fade-exit-active {
+//}
+
+
+
 //@include mediaWidth(1024) {
 //  padding: 30px 0 103px;
 //}

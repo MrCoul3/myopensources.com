@@ -10,6 +10,7 @@ import noteIco from './images/component-icons/note-app-icon.png';
 import converterIco from './images/component-icons/converter-app-icon.png';
 import calculatorIco from './images/component-icons/calculator-app-icon.png';
 import todoIco from './images/component-icons/todo-app-icon.png';
+import rusfriendIcon from './images/component-icons/rusfriend-icon.png';
 import backBtn from './images/icons/back.svg';
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -42,24 +43,29 @@ export default function Portfolio() {
             <Route exact path='/portfolio' render={() =>
                 <div className='main'>
                         <div className="components-menu">
+                            <a href="https://rusfriend.com" target='_blank'>
+                                <img className='component-icon' src={rusfriendIcon}
+                                     alt="rusfriend.com"/>
+                                <div className='text-center'>PHP + SQL + LAMP + JQuery + Vue.js</div>
+                            </a>
                             <NavLink to='/portfolio/react-notes'>
                                 <img className='component-icon' src={noteIco}
-                                     alt=""/>
+                                     alt="react-notes"/>
                                 <div className='text-center'>React + TypeScript</div>
                             </NavLink>
                             <NavLink to='/portfolio/converter'>
                                 <img className='component-icon' src={converterIco}
-                                     alt=""/>
+                                     alt="converter"/>
                                 <div className='text-center'>React + TypeScript</div>
                             </NavLink>
                             <NavLink to='/portfolio/calculator'>
                                 <img className='component-icon' src={calculatorIco}
-                                     alt=""/>
+                                     alt="calculator"/>
                                 <div className='text-center'>React + TypeScript + React.Context</div>
                             </NavLink>
                             <NavLink to='/portfolio/todo'>
                                 <img className='component-icon' src={todoIco}
-                                     alt=""/>
+                                     alt="todo"/>
                                 <div className='text-center'>React + Redux</div>
                             </NavLink>
                         </div>

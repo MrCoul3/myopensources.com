@@ -43,7 +43,7 @@ export default function NotesMain() {
         return (
             <div className='card-header'>
                 <Route exact path='/portfolio/react-notes/note' render={() =>
-                    <Link to='/portfolio'>
+                    <Link to='/portfolio/react-notes'>
                         <button type="button" style={{color: "#fff"}} className="btn btn-warning">
                             Close Form
                         </button>

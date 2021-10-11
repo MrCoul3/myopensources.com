@@ -15,7 +15,7 @@ export default function Header(props) {
 
     return (
 
-        <header className={'main-header ' + props.animation.header}>
+        <header className={'main-header ' + props.animation.header + ' ' + props.fixed}>
 
             <div className={'header-bg '}>
 

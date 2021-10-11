@@ -1,4 +1,4 @@
-@import "../App";
+@import "../index";
 
 footer {
   font-family: 'Jura', sans-serif;
@@ -13,11 +13,12 @@ footer {
     background-size: cover;
     background-position: center 0;
     @include mediaWidth(900) {
-      //height: 220px;
+      height: 70vh;
     }
-    @include mediaWidth(768) {
 
+    @include mediaWidth(768) {
     }
+
     .social-net-container {
       display: flex;
       flex-direction: column;
@@ -55,6 +56,13 @@ footer {
       }
       .language {
         text-align: end;
+        color: white;
+        font-size: 22px;
+        font-weight: bold;
+        @include mediaWidth(900) {
+          font-size: 18px;
+          letter-spacing: .3px;
+        }
         @include mediaWidth(768) {
           text-align: center;
         }

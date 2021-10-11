@@ -33,7 +33,7 @@ export default function NavMenu(props) {
 
             <div className='nav-container flex-box'>
 
-                <Route exact path='/:page' render={()=>
+                <Route path='/:page' render={()=>
                     <div className={`link-wrap link-wrap--home`}>
                         <NavLink to='/'>HOME</NavLink>
                         <div className="bgColor1"/>

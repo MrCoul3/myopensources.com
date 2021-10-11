@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import "../index";
 
 $dark: #00071bc4;
 $gray: #6c757d;
@@ -21,16 +22,25 @@ a {
 
 .BackToHomeBtn {
   left: 70px;
-  top: 47px;
+  top: 144px;
   position: absolute;
   opacity: 0.1;
   z-index: 111;
   transition: all ease-in-out .3s;
+  @include mediaWidth(900) {
+    top: 103px;
+    left: 10px;
+  }
+  @include mediaWidth(768) {
+    top: 62px;
+  }
   &:hover {
     opacity: 1;
   }
 }
-
+.main-page {
+  transition: all .1s ease-in-out;
+}
 #Portfolio {
   box-sizing: border-box;
   font-family: 'Quicksand', sans-serif!important;
@@ -40,6 +50,9 @@ a {
     position: relative;
     padding: 100px 30px 50px;
     margin: 0 auto;
+    @include mediaWidth(768) {
+      padding: 30px 20px 30px;
+    }
     .components-menu {
       display: flex;
       justify-content: space-around;
@@ -80,6 +93,12 @@ a {
       color: #fff;
       text-align: center;
       padding: 10px 0;
+      @include mediaWidth(900) {
+        font-size: 60px;
+      }
+      @include mediaWidth(768) {
+        font-size: 40px;
+      }
     }
   }
 
