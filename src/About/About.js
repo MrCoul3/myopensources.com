@@ -38,7 +38,7 @@ export default function About() {
                               and I develop independently every day</p>
                       </div>
 
-                      <img src={diploma} alt="diploma"/>
+                      <img className={'diploma-photo'} src={diploma} alt="diploma"/>
                   </div>
 
               </section>

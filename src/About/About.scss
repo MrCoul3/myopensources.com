@@ -81,6 +81,16 @@
         &__skills {
 
         }
+        .diploma-photo {
+            height: 100%;
+            width: 400px;
+            margin-left: 20px;
+            //min-width: 460px;
+            @include mediaWidth(768) {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
     }
 
 
