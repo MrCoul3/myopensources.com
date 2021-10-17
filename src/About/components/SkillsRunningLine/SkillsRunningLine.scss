@@ -27,11 +27,11 @@
     position: relative;
     font-family: 'Jura', sans-serif;
     background: url(./images/line.svg);
-    animation: textLine-movement-animation 6s linear infinite ;
+    animation: textLine-movement-animation 18s linear infinite ;
     @include mediaWidth(900) {
       height: 33px;
       background: url(./images/line-tablet.svg);
-      animation: textLine-movement-animation-tablet 6s linear infinite ;
+      animation: textLine-movement-animation-tablet 18s linear infinite ;
 
     }
 
@@ -41,14 +41,14 @@
     from{
       background-position: 0 0;}
     to{
-      background-position: 976px 0;
+      background-position: 1189px 0;
     }
   }
   @keyframes textLine-movement-animation {
     from{
       background-position: 0 0;}
     to{
-      background-position: 1230px 0;
+      background-position: 1454px 0;
     }
   }
 }

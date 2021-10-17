@@ -3,6 +3,7 @@
 footer {
   font-family: 'Jura', sans-serif;
   overflow: hidden;
+  //height: 37vh;
 
   .footer-frame{
     height: 345px;
@@ -35,7 +36,7 @@ footer {
         display:flex;
         align-self: flex-end;
         gap: 5px;
-        margin-bottom: 138px;
+        margin-bottom: 60px;
         @include mediaWidth(900) {
           margin-bottom: 40px;
           gap: 10px;

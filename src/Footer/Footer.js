@@ -1,11 +1,15 @@
-import React, {useEffect, useState, useRef} from 'react';
+import React, {useEffect, useState, useRef, useContext} from 'react';
 import './Footer.scss';
 import github from './images/github.svg';
 import instagram from './images/instagram.svg';
 import skype from './images/skype.svg';
 import telegram from './images/telegram.svg';
 import whatsapp from './images/whatsapp.svg';
+
+
 export default function Footer() {
+
+
     return (
         <footer>
             <div className='footer-frame'>

@@ -1,12 +1,16 @@
 @import "./index";
-main#App-main {
+
+.App-main {
   height: 0;
-  //height: scrollHeight;
-  //margin-top: 0;
-  //margin-top: 100px;
+  margin-top: 0;
   overflow: hidden;
-  transition: margin .5s ease, height .7s ease;
+  transition: height .4s ease, margin-top 0s linear;
+  &--auto {
+    margin-top: 94px;
+  }
 }
+
+
 main#App-main.App-main-extended {
   margin: 100px 0 50px;
   height: 800px;
@@ -20,12 +24,7 @@ main#App-main.App-main-extended {
     height: 1000px;
   }
 }
-main#App-main.App-main-collapsed {
-  height: 0;
-}
-main#App-main.App-main-height-auto {
-  height: auto;
-}
+
 
 .fade-enter {
   opacity: 0;

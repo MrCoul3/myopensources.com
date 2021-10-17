@@ -1,6 +1,7 @@
 import {Route, NavLink} from "react-router-dom";
-import React, {useEffect} from "react";
+import React, {useContext, useEffect} from "react";
 import './NavMenu.scss';
+import {AnimationContext} from "../../../App";
 
 
 function binaryAnimatedNavMenu(navLink) {
@@ -22,6 +23,9 @@ function binaryAnimatedNavMenu(navLink) {
 }
 
 export default function NavMenu(props) {
+
+    const context = useContext(AnimationContext);
+
 
     useEffect(() => {
         const navLink = document.querySelectorAll('.link-wrap');
@@ -47,7 +51,7 @@ export default function NavMenu(props) {
                         {path: '/portfolio', name: 'PORTFOLIO', key: 1,className: 'portfolio'},
                         // {path: '/development', name: 'DEVELOPMENT'}
                     ].map(elem =>
-                        <div className={`link-wrap link-wrap--${elem.className} ${props.hideOnMobile}`}>
+                        <div className={`link-wrap link-wrap--${elem.className} ${context.navLink}`}>
                             <NavLink key={elem.key.toString()}
                                      activeClassName='nav-menu-active-element' to={elem.path}>{elem.name}
 

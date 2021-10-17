@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useState, useEffect, useRef, useContext} from 'react';
 import {Route, useLocation, Redirect, Switch, useHistory} from "react-router-dom";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
@@ -11,67 +11,77 @@ import {
     CSSTransition
 } from "react-transition-group";
 
-const language = {
-    russian: {
+const animation = {
+    header: '',
+    main: '',
+    navLink: ''
+};
 
-    },
-    english: {
-
-    }
-}
-const ContextLanguage = React.createContext(language);
-
+export const AnimationContext = React.createContext(animation);
 
 export default function App() {
 
+    const context = useContext(AnimationContext);
     const location = useLocation();
-    const [headerAnimation, setHeaderAnimation] = useState({});
     const main = useRef(null);
-    const mainCurrent = main.current;
-    const [appMainStyles, setAppMainStyles] = useState({});
-    const [heightAuto, setHeightAuto] = useState();
-    const [headerFixed, setHeaderFixed] = useState();
+    const body = document.querySelector('body');
+    const [state, setState] = useState(context);
 
     useEffect(() => {
+
         if (location.pathname !== '/') {
-            setHeaderAnimation({
-                header: 'main-header--collapse-animation',
-                navMenu: 'nav-menu-hidden',
+            window.scrollTo(0, 0);
+
+            setState(prevState => {
+                const newState = {...prevState};
+                newState.header = 'main-header--animate';
+                newState.navLink = 'nav-menu-hidden';
+                return newState;
             });
+            setTimeout(() => body.style.overflow = 'visible', 800)
+            main.current.style.height = `${main.current.scrollHeight}px`
 
-            if (mainCurrent) {
-                setAppMainStyles({
-                   heightNumbers: 'App-main-extended',
-                });
-                setTimeout(()=>setHeightAuto('App-main-height-auto'), 800)
-                setTimeout(()=>setHeaderFixed('main-header--fixed'), 300)
-            }
         } else {
-            setHeightAuto('');
-            setHeaderFixed('')
-            setTimeout(()=>{
-                setHeaderAnimation({
-                    header: '',
-                    navMenu: '',
-                });
-                setAppMainStyles({
-                    heightNumbers: 'App-main-collapsed',
-                });
-            }, 100)
+            window.scrollTo(0, 0);
+            setState(prevState => {
+                const newState = {...prevState};
+                newState.header = '';
+                newState.main = '';
+                newState.navLink = '';
+                return newState;
+            });
+            // body.style.overflow = 'hidden';
+            main.current.style.height = `${main.current.scrollHeight}px`;
 
+            window.getComputedStyle(main.current, null).getPropertyValue("height");
+            main.current.style.height = '0px';
         }
-    }, [location, mainCurrent, heightAuto])
+    }, [location])
 
+    function transitionEnd() {
+        if (state.header !== '') {
+            setState(prevState => {
+                const newState = {...prevState};
+                newState.header = 'main-header--animate main-header--fixed';
+                newState.main = 'App-main--auto';
+                return newState;
+            })
+            main.current.style.height = 'auto';
+            console.log(state)
+        }
+    }
 
     return (
         <section className='App'>
 
-            <ContextLanguage.Provider>
-                <Header fixed={headerFixed} animation={headerAnimation}/>
+            <AnimationContext.Provider value={state}>
 
-                <main className={appMainStyles.heightNumbers + ' ' + heightAuto}
+                <Header />
+
+                <main onTransitionEnd={transitionEnd} className={'App-main ' + state.main}
                       ref={main}
                       id={'App-main'}>
+
                     <TransitionGroup >
                         <CSSTransition
                             key={location.key}
@@ -90,16 +100,14 @@ export default function App() {
                                     }>
                                     </Route>
                                 )}
-                                <Route component={PageNotFound}/>
+                                <Redirect to={PageNotFound} />
                             </Switch>
                         </CSSTransition>
                     </TransitionGroup>
-
-
                 </main>
 
                 <Footer/>
-            </ContextLanguage.Provider>
+            </AnimationContext.Provider>
 
 
 

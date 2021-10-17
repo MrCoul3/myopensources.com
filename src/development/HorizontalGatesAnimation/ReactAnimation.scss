@@ -1,0 +1,51 @@
+$headerHeight: 150px;
+
+  .RA_header {
+    height: 50vh;
+    background: #4f6277;
+    position: relative;
+    transition: all 1s ease;
+    top: 0;
+    .RA_expand-btn {
+      position: absolute;
+      bottom: 0;
+      width: 120px;
+      height: 35px;
+      outline: none;
+      border: none;
+      background: #ab785a;
+      border-radius: 5px;
+      left: calc(50% - 120px/2);
+      transition: letter-spacing .03s linear;
+      color: white;
+      &:active {
+        letter-spacing: 3px;
+      }
+    }
+    &--animate {
+      //top: -200px;
+      height: $headerHeight;
+      width: 100%;
+    }
+    &--fixed {
+      position: fixed;
+    }
+  }
+  .RA_footer {
+    height: 50vh;
+    background: #4f776f;
+  }
+  .RA_main {
+    height: 0;
+    transition: height 1s ease, margin-top 0s linear;
+    overflow: hidden;
+    margin-top: 0;
+    //&--animate {
+    //  height: 700px;
+    //}
+    &--auto {
+      height: auto;
+      margin-top: $headerHeight;
+    }
+
+  }

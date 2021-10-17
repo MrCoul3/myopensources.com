@@ -2,37 +2,32 @@
 @import "../index";
 
 * {
-  transition: all ease .5s;
+  //transition: all ease .5s;
 }
-
 
 .main-header {
   //height: 466px;
   width: 100%;
   top: 0;
-  color: white;
   position: relative;
   text-align: center;
-  background: #E5E5E5;
-  transition: top .8s ease;
+  color: white;
+  overflow: hidden;
+  transition: top .5s ease;
   @include mediaWidth(768) {
     text-align: left;
   }
 
-  &--collapse-animation {
-    top: -367px;
-    //position: fixed;
-    //position: sticky;
-    width: 100%;
+  &--animate {
+    //height: 103px;
+    top: -372px;
     z-index: 1000;
-
     @include mediaWidth(900) {
       top: -242px;
     }
     @include mediaWidth(768) {
 
     }
-
   }
   &--fixed {
     position: fixed;
@@ -52,6 +47,7 @@
       top: 0;
       transition: opacity ease-in .1s;
       opacity: 1;
+
     }
   }
 
