@@ -30,9 +30,12 @@ a {
   @include mediaWidth(900) {
     top: 103px;
     left: 10px;
+    opacity: .5;
   }
   @include mediaWidth(768) {
     top: 62px;
+    width: 24px;
+
   }
   &:hover {
     opacity: 1;

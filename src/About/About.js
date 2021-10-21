@@ -13,7 +13,7 @@ export default function About() {
                       <div className={'About-section-wrapper About-section-wrapper__column'}>
                           <h2 className={'About-section-title'}>I am Nikolay Ivanov</h2>
                           <p className={'About-section-description'}>I am a Front-end Developer located in Russia, Kaluga.
-                              I currently work as a Junior React Developer for SENLA.
+                              I currently work as a Junior React Developer.
                               I am looking to take on more work and
                               to increase my skills as a Front-end Developer.</p>
                           <span className={'About-section-email'}>email: mr.coul@inbox.ru</span>

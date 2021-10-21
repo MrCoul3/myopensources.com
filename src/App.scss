@@ -7,6 +7,12 @@
   transition: height .4s ease, margin-top 0s linear;
   &--auto {
     margin-top: 94px;
+    @include mediaWidth(900) {
+      margin: 70px 0;
+    }
+    @include mediaWidth(768) {
+      margin: 41px 0;
+    }
   }
 }
 

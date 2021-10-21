@@ -1,6 +1,6 @@
 import React, {useEffect, useState, useRef, useContext, ProviderProps} from "react";
 import './Calculator.scss';
-import {ThemeContext, themes, TypesThemes} from "../ContextData/Themes";
+import {ThemeContext, themes, TypesThemes} from "./Themes";
 import ThemeChangerButton from "./ThemeChangerButton";
 
 

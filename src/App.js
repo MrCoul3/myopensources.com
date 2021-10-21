@@ -10,7 +10,6 @@ import {
     TransitionGroup,
     CSSTransition
 } from "react-transition-group";
-
 const animation = {
     header: '',
     main: '',
@@ -50,9 +49,7 @@ export default function App() {
                 newState.navLink = '';
                 return newState;
             });
-            // body.style.overflow = 'hidden';
             main.current.style.height = `${main.current.scrollHeight}px`;
-
             window.getComputedStyle(main.current, null).getPropertyValue("height");
             main.current.style.height = '0px';
         }
@@ -70,6 +67,26 @@ export default function App() {
             console.log(state)
         }
     }
+
+
+    async function getUsers() {
+
+        let response = await fetch("/api/users", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json; charset=utf-8"
+            }
+        });
+
+        let users = await response.json();
+        console.log(users)
+
+
+    }
+    useEffect(()=> {
+        getUsers().then(r => console.log(r));
+    },[])
+
 
     return (
         <section className='App'>
