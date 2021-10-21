@@ -37,7 +37,7 @@ export default function NotesMain() {
         );
     }
     useEffect(()=> {
-        console.log(notes)
+        // console.log(notes)
     }, [notes])
     function renderLeftMenuHeader() {
         return (

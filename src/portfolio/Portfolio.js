@@ -5,12 +5,14 @@ import ReactNotesApp from "./Components/ReactNotes/ReactNotesApp";
 import ReactCalculatorApp from "./Components/ReactSimpleCalculator/ReactCalculatorApp";
 import Converter from "./Components/ReactConverter/Converter";
 import ReduxToDoApp from "./Components/ReduxApps/ToDoApp/ToDoApp";
+import Palette from "./Components/Palette/Palette";
 import './Portfolio.scss'
 import noteIco from './images/component-icons/note-app-icon.png';
 import converterIco from './images/component-icons/converter-app-icon.png';
 import calculatorIco from './images/component-icons/calculator-app-icon.png';
 import todoIco from './images/component-icons/todo-app-icon.png';
 import rusfriendIcon from './images/component-icons/rusfriend-icon.png';
+import paletteIcon from './images/component-icons/palette-icon.png';
 import backBtn from './images/icons/back.svg';
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -48,7 +50,7 @@ export default function Portfolio() {
                                      alt="rusfriend.com"/>
                                 <div className='text-center'>PHP + SQL + LAMP + JQuery + Vue.js</div>
                             </a>
-                            <NavLink to='/portfolio/react-notes'>
+                            <NavLink  to='/portfolio/react-notes'>
                                 <img className='component-icon' src={noteIco}
                                      alt="react-notes"/>
                                 <div className='text-center'>React + TypeScript</div>
@@ -68,6 +70,11 @@ export default function Portfolio() {
                                      alt="todo"/>
                                 <div className='text-center'>React + Redux</div>
                             </NavLink>
+                            <NavLink to='/portfolio/palette'>
+                                <img className='component-icon' src={paletteIcon}
+                                     alt="paletteIcon"/>
+                                <div className='text-center'>React + Cookie</div>
+                            </NavLink>
                         </div>
                 </div>}/>
             <Switch>
@@ -75,6 +82,7 @@ export default function Portfolio() {
                 <Route exact path='/portfolio/converter' component={Converter}/>
                 <Route exact path='/portfolio/calculator' component={ReactCalculatorApp}/>
                 <Route exact path='/portfolio/todo' component={ReduxToDoApp}/>
+                <Route exact path='/portfolio/palette' component={Palette}/>
             </Switch>
 
         </div>

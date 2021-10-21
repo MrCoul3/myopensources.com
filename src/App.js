@@ -64,7 +64,6 @@ export default function App() {
                 return newState;
             })
             main.current.style.height = 'auto';
-            console.log(state)
         }
     }
 

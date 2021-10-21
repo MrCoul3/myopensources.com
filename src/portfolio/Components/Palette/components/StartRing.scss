@@ -1,0 +1,62 @@
+@import "../../../../index";
+
+.start-ring-container {
+  max-width: 434px;
+  width: 434px;
+  height: 434px;
+  position: absolute;
+  top: 209px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin:0 auto;
+  @include mediaWidth(900) {
+  }
+  @include mediaWidth(768) {
+    width: 100%;
+    transform: scale(0.4);
+    top: 109px;
+
+  }
+}
+
+#start-ring {
+  position: absolute;
+  background-image: url(./images/start-ring.svg);
+  //max-width: 434px;
+  width: 434px;
+  height: 434px;
+  @include mediaWidth(768) {
+    //width: 330px;
+    //height: 330px;
+
+  }
+
+}
+
+#start-btn {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: 80px;
+  background-image: url(./images/start-btn.svg);
+  width: 434px;
+  height: 434px;
+}
+
+.start-ring-rotate {
+  transform: rotateZ(100000deg);
+  transition: all linear 10000s;
+}
+
+.start-ring-hide {
+  transform: rotateZ(200deg);
+  opacity: 0;
+  transition: all linear .8s;
+}
+
+.start-btn-rotate {
+  transform: rotateZ(1000deg) scale3d(0, 0, 1);
+  transition: all linear 1s;
+}
+

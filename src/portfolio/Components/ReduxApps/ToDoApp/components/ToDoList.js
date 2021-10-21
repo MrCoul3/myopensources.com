@@ -38,7 +38,7 @@ export default function ToDoList() {
             onClick={handleCompleteNote}
             id={obj.id}
             className={'note-element m-auto d-flex justify-content-between'}>
-            <span className='check'><strong style={obj.completed ? { display: 'block'} : {display: 'none'}}>&#10003;</strong></span>
+            <span className='verify'><strong style={obj.completed ? { display: 'block'} : {display: 'none'}}>&#10003;</strong></span>
             <span style={{paddingLeft: '10px'}} className={'text-start  w-100 ' + (obj.completed ? 'note-completed' : '')}>{obj.text}</span>
             <span className='delete-btn' id={obj.id} onClick={handleDeleteNote}>delete</span>
         </div>)
