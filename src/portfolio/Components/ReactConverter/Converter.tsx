@@ -48,7 +48,9 @@ export default function Converter() {
         <div className='text-center'>
             <header>
                 <div className="header-bg-portfolio-component header-bg-portfolio-component--green">
-                    <h1 className='title main-title h2'><span className='text-warning'>S</span>imple React Converter </h1>
+                    <h1 className='title main-title h2'>
+                        <span className='text-warning'>R</span>
+                        eact Converter </h1>
                 </div>
             </header>
             <div className='form-group '>

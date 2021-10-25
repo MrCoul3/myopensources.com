@@ -1,3 +1,9 @@
+@mixin mediaWidth($media-width) {
+  @media screen and (max-width: #{$media-width}px) {
+    @content;
+  }
+}
+
 #Calculator {
   margin-bottom: 20px;
   .flex-box {
@@ -10,14 +16,24 @@
     border-radius: 5px;
     border-color: #ffffff;
     background: #f9fafb;
+
+    @include mediaWidth(401) {
+      width: 44.5px;
+    }
   }
 
   button[value='0'] {
     width: 178px;
+    @include mediaWidth(401) {
+      width: 89px;
+    }
   }
 
   button[value='c'] {
     width: (178px+89px);
+    @include mediaWidth(401) {
+      width: 133.5px;
+    }
   }
 
   .main-frame {
@@ -26,7 +42,12 @@
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
-
+    @include mediaWidth(768) {
+      width: 100%;
+    }
+    @include mediaWidth(401) {
+      width: 226px;
+    }
     .input {
       .input-field {
         width: 74.5%;
@@ -46,6 +67,10 @@
 
     .keyboard {
       flex-wrap: wrap;
+      justify-content: center;
+      @include mediaWidth(768) {
+
+      }
     }
   }
 }

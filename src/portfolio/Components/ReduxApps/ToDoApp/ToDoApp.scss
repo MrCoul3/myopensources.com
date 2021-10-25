@@ -1,3 +1,8 @@
+@mixin mediaWidth($media-width) {
+  @media screen and (max-width: #{$media-width}px) {
+    @content;
+  }
+}
 .main-input {
   margin: 10px auto;
 }
@@ -6,6 +11,12 @@
 }
 .note-element {
   width: 47%;
+  @include mediaWidth(768) {
+    width: 75% !important;
+  }
+  @include mediaWidth(401) {
+    width: 90% !important;
+  }
 }
 
 .verify {
@@ -27,6 +38,23 @@
 }
 
 .service-buttons {
-  width: 20%;
+  width: 30%;
   margin: 10px auto!important;
+  @include mediaWidth(768) {
+    width: 50% !important;
+  }
+  @include mediaWidth(401) {
+    margin-top: 20px!important;
+    width: 75% !important;
+  }
+}
+
+.ToDo-input {
+  width: 50% !important;
+  @include mediaWidth(768) {
+    width: 75% !important;
+  }
+  @include mediaWidth(401) {
+    width: 90% !important;
+  }
 }

@@ -1,0 +1,27 @@
+@mixin mediaWidth($media-width) {
+  @media screen and (max-width: #{$media-width}px) {
+    @content;
+  }
+}
+
+.BackToHomeBtn {
+  left: 70px;
+  top: 130px;
+  position: absolute;
+  opacity: 0.1;
+  z-index: 111;
+  transition: all ease-in-out .3s;
+  @include mediaWidth(900) {
+    top: 103px;
+    left: 10px;
+    opacity: .5;
+  }
+  @include mediaWidth(768) {
+    top: 57px;
+    width: 24px;
+
+  }
+  &:hover {
+    opacity: 1;
+  }
+}

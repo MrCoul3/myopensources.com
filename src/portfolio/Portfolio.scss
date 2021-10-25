@@ -21,27 +21,8 @@ a {
   flex-direction: column;
 }
 
-.BackToHomeBtn {
-  left: 70px;
-  top: 144px;
-  position: absolute;
-  opacity: 0.1;
-  z-index: 111;
-  transition: all ease-in-out .3s;
-  @include mediaWidth(900) {
-    top: 103px;
-    left: 10px;
-    opacity: .5;
-  }
-  @include mediaWidth(768) {
-    top: 62px;
-    width: 24px;
 
-  }
-  &:hover {
-    opacity: 1;
-  }
-}
+
 .main-page {
   transition: all .4s ease-in-out;
   margin:0 0 30px;
@@ -97,7 +78,7 @@ a {
 
     }
     .main-title {
-      font-size: 80px;
+      font-size: 60px;
       font-weight: 400;
       color: #fff;
       text-align: center;
@@ -106,7 +87,7 @@ a {
         font-size: 60px;
       }
       @include mediaWidth(768) {
-        font-size: 40px;
+        font-size: 30px;
       }
     }
   }

@@ -1,5 +1,6 @@
 import {useDispatch} from "react-redux";
 import React, {useState} from "react";
+import '../ToDoApp.scss';
 
 export default function Header() {
 
@@ -27,7 +28,7 @@ export default function Header() {
                 <input
                     onChange={handleChange}
                     value={inputValue}
-                    className='main-input form-control w-50'
+                    className='main-input form-control ToDo-input'
                     onKeyDown={handleKeyDown}
                     autoFocus={true}
                     type="text"

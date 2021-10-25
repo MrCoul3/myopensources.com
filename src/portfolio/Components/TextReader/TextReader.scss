@@ -1,0 +1,16 @@
+#TextReader {
+  //position: relative;
+  .word {
+    cursor: pointer;
+  }
+  .info {
+    top: calc(30%);
+    left: calc(50% - 100px);
+    //display: block;
+    position: absolute;
+    min-width: 200px;
+    height: 100px;
+    background: #949494;
+    opacity: 0.8;
+  }
+}

@@ -13,27 +13,11 @@ import calculatorIco from './images/component-icons/calculator-app-icon.png';
 import todoIco from './images/component-icons/todo-app-icon.png';
 import rusfriendIcon from './images/component-icons/rusfriend-icon.png';
 import paletteIcon from './images/component-icons/palette-icon.png';
-import backBtn from './images/icons/back.svg';
 import 'bootstrap/dist/css/bootstrap.css';
+import BackToHomeBtn from "./Components/BackToHomeBtn/BackToHomeBtn";
 
-const tooltipsParams = {
-    'data-background-color': "#5A5A5A",
-    'data-text-color': "#fff",
-    'data-for': 'toolTip1'
-};
 
-function BackToHomeBtn() {
-    return (
-        <>
-            <ReactTooltip effect='solid' id="toolTip1"/>
-            <div {...tooltipsParams} data-tip='back to home page' className='BackToHomeBtn'>
-                <NavLink to='/portfolio'>
-                    <img className='img-fluid' src={backBtn} alt="back to main"/>
-                </NavLink>
-            </div>
-        </>
-    )
-}
+
 
 export default function Portfolio() {
     return (
