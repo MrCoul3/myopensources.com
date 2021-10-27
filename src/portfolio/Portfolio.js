@@ -1,14 +1,13 @@
 import React from "react";
 import {Route, Switch, NavLink} from "react-router-dom";
-import ReactTooltip from "react-tooltip";
 import ReactNotesApp from "./Components/ReactNotes/ReactNotesApp";
 import ReactCalculatorApp from "./Components/ReactSimpleCalculator/ReactCalculatorApp";
-import Converter from "./Components/ReactConverter/Converter";
+import AppConverter from "./Components/CurrencyConverter/AppConverter";
 import ReduxToDoApp from "./Components/ReduxApps/ToDoApp/ToDoApp";
 import Palette from "./Components/Palette/Palette";
 import './Portfolio.scss'
 import noteIco from './images/component-icons/note-app-icon.png';
-import converterIco from './images/component-icons/converter-app-icon.png';
+import converterIco from './images/component-icons/currencyconverter-app-icon.png';
 import calculatorIco from './images/component-icons/calculator-app-icon.png';
 import todoIco from './images/component-icons/todo-app-icon.png';
 import rusfriendIcon from './images/component-icons/rusfriend-icon.png';
@@ -42,7 +41,7 @@ export default function Portfolio() {
                             <NavLink to='/portfolio/converter'>
                                 <img className='component-icon' src={converterIco}
                                      alt="converter"/>
-                                <div className='text-center'>React + TypeScript</div>
+                                <div className='text-center'>React + API + Material-UI</div>
                             </NavLink>
                             <NavLink to='/portfolio/calculator'>
                                 <img className='component-icon' src={calculatorIco}
@@ -63,7 +62,7 @@ export default function Portfolio() {
                 </div>}/>
             <Switch>
                 <Route exact path='/portfolio/react-notes' component={ReactNotesApp}/>
-                <Route exact path='/portfolio/converter' component={Converter}/>
+                <Route exact path='/portfolio/converter' component={AppConverter}/>
                 <Route exact path='/portfolio/calculator' component={ReactCalculatorApp}/>
                 <Route exact path='/portfolio/todo' component={ReduxToDoApp}/>
                 <Route exact path='/portfolio/palette' component={Palette}/>

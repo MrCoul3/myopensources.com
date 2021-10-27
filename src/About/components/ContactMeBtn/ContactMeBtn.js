@@ -48,7 +48,7 @@ export default function ContactMeBtn() {
               <a href="https://join.skype.com/invite/m55LU6wDgKor">
                   <img src={skype} alt="skype"/>
               </a>
-              <a href="https://t.me/mr_coul">
+              <a href="https://t.me/MrCouI">
                   <img src={telegram} alt="telegram"/>
               </a>
               <a href="https://api.whatsapp.com/send?phone=79623738935">

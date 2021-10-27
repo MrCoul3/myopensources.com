@@ -27,9 +27,8 @@ export default function App() {
     const [state, setState] = useState(context);
 
     useEffect(() => {
-
         if (location.pathname !== '/') {
-            window.scrollTo(0, 0);
+            setTimeout(()=> window.scrollTo(0, 0), 500) ;
 
             setState(prevState => {
                 const newState = {...prevState};
@@ -68,23 +67,23 @@ export default function App() {
     }
 
 
-    async function getUsers() {
-
-        let response = await fetch("/api/users", {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json; charset=utf-8"
-            }
-        });
-
-        let users = await response.json();
-        console.log(users)
-
-
-    }
-    useEffect(()=> {
-        getUsers().then(r => console.log(r));
-    },[])
+    // async function getUsers() {
+    //
+    //     let response = await fetch("/api/users", {
+    //         method: "GET",
+    //         headers: {
+    //             "Content-Type": "application/json; charset=utf-8"
+    //         }
+    //     });
+    //
+    //     let users = await response.json();
+    //     console.log(users)
+    //
+    //
+    // }
+    // useEffect(()=> {
+    //     getUsers().then(r => console.log(r));
+    // },[])
 
 
     return (

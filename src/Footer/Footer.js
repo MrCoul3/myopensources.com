@@ -18,7 +18,7 @@ export default function Footer() {
                         <li><a href="https://github.com/MrCoul3?tab=repositories" target='_blank'><img src={github} alt=""/></a></li>
                         <li><a href="https://www.instagram.com/coul3/" target='_blank'><img src={instagram} alt="instagram"/></a></li>
                         <li><a href="https://join.skype.com/invite/m55LU6wDgKor" target='_blank'><img src={skype} alt="skype"/></a></li>
-                        <li><a href="https://t.me/mr_coul" target='_blank'><img src={telegram} alt="telegram"/></a></li>
+                        <li><a href="https://t.me/MrCouI" target='_blank'><img src={telegram} alt="telegram"/></a></li>
                         <li><a href="https://api.whatsapp.com/send?phone=79623738935" target='_blank'><img src={whatsapp} alt="whatsapp"/></a></li>
                     </ul>
                     <p className='language'>
