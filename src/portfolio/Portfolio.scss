@@ -8,6 +8,7 @@ $green: #198754;
 $yellow: #ffc107;
 $todoBg: #154e43;
 $palette: #576A77;
+$currencyConverter: #577764;
 
 a {
   text-decoration: none!important;
@@ -61,22 +62,31 @@ a {
   }
   .header-bg-portfolio-component {
     background: $dark;
+
     &--light {
       background: $light;
     }
+
     &--green {
       background: $green;
     }
+
     &--gradient {
       background: linear-gradient(106.01deg, rgba(0, 0, 0, 0.91) 9.82%, rgba(11, 57, 79, 0.9) 51.26%, rgba(9, 86, 122, 0.86) 71.74%, rgba(6, 113, 163, 0.82) 100%);
     }
+
     &--todoBg {
       background: $todoBg;
     }
+
     &--palette {
       background: $palette;
-
     }
+
+    &--currencyConverter {
+      background: $currencyConverter;
+    }
+
     .main-title {
       font-size: 60px;
       font-weight: 400;

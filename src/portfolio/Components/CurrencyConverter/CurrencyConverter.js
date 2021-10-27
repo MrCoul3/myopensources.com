@@ -39,6 +39,12 @@ export default function CurrencyConverter() {
 
 
     return (
+        <>
+        <header>
+            <div className="header-bg-portfolio-component header-bg-portfolio-component--currencyConverter">
+                <h1  className='title main-title h2'>currency converter</h1>
+            </div>
+        </header>
         <Box id={'CurrencyConverter'}>
             <Stack
                 justifyContent="center"
@@ -76,5 +82,6 @@ export default function CurrencyConverter() {
                     info={'Я получу'}/>
             </Stack>
         </Box>
+        </>
     );
 }
