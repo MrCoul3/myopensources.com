@@ -1,0 +1,43 @@
+@mixin mediaWidth($media-width) {
+  @media screen and (max-width: #{$media-width}px) {
+    @content;
+  }
+}
+
+@include mediaWidth(768) {
+  width: 100%;
+  top: -2000px;
+}
+
+#CurrencyConverter {
+  #main-wrapper {
+    @include mediaWidth(900) {
+      flex-direction: column;
+      align-items: center;
+    }
+    @include mediaWidth(768) {
+      margin-top: 50px;
+      gap: 19px;
+    }
+
+    #field-wrapper {
+      @include mediaWidth(768) {
+        max-width: 300px;
+      }
+
+      .input-value {
+        @include mediaWidth(768) {
+          width: 295px !important;
+          max-width: 300px;
+        }
+      }
+
+      #change-button {
+        @include mediaWidth(768) {
+          position: absolute;
+          left: calc(50% - 70px);
+        }
+      }
+    }
+  }
+}

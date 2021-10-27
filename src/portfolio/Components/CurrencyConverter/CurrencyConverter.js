@@ -3,7 +3,7 @@ import Field from "./components/Field";
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
-
+import Preloader from "./components/Preloader";
 import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 
@@ -11,7 +11,7 @@ function getApi(url, method) {
     return fetch(url, {method})
         .then(response => {
             if (response.ok) {
-                return response.json()
+                return  response.json()
             } else {
                 throw new Error(response.statusText)
             }
@@ -21,6 +21,7 @@ function getApi(url, method) {
 export const selector = state => state;
 
 export default function CurrencyConverter() {
+
     const url = 'https://www.cbr-xml-daily.ru/daily_json.js';
 
     const dispatch = useDispatch();
@@ -40,6 +41,7 @@ export default function CurrencyConverter() {
 
     return (
         <>
+        <Preloader display={store.ratesData !== null ? 'none' : 'flex'}/>
         <header>
             <div className="header-bg-portfolio-component header-bg-portfolio-component--currencyConverter">
                 <h1  className='title main-title h2'>currency converter</h1>
@@ -47,11 +49,13 @@ export default function CurrencyConverter() {
         </header>
         <Box id={'CurrencyConverter'}>
             <Stack
+                id={'main-wrapper'}
                 justifyContent="center"
                 direction="row"
                 mt={16}
                 mb={20}>
-                <Field currentCurrency={store.input_1.currency}
+                <Field
+                    currentCurrency={store.input_1.currency}
                        single={store.singleRes_1}
                        value={store.input_1.value}
                        name={'input_1'}
@@ -60,6 +64,7 @@ export default function CurrencyConverter() {
                        info={'У меня есть'}/>
                 <Tooltip title={'reverse'}>
                     <Button
+                        id={'change-button'}
                         onClick={() => {
                             dispatch({type: 'CHANGE_CURRENCIES'})
                         }}

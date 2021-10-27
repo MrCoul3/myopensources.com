@@ -31,12 +31,14 @@ export default function reducer(state = initialState, action) {
     }
 
     if (action.type === 'GET_DATA') {
+        console.log(action.data)
         newState.ratesData = {...action.data, RUB: {Value: 1}}
         if (localStorage.getItem('input_1')) {
             result();
         }
         return newState;
     }
+
     if (action.type === 'ERR_DATA') {
         newState.input_2.value = action.data;
         return newState;

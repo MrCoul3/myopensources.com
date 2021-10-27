@@ -26,7 +26,7 @@ export default function Field(props) {
 
 
     return (
-        <Box sx={{
+        <Box id={'field-wrapper'} sx={{
             marginLeft: '0',
             minWidth: 120,
             border: 1,
@@ -52,6 +52,7 @@ export default function Field(props) {
                 </Select>
             </FormControl>
             <input
+                className={'input-value'}
                 disabled={props.disabled}
                 onChange={inputChange}
                 style={{
